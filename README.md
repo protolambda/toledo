@@ -8,6 +8,8 @@ A temporary dev-net to test the first v1.0.0 client candidates.
 
 Chain config file in **[`config.yaml`](./config.yaml)**
 
+Bootnodes in [`bootnodes.txt`](./bootnodes.txt)
+
 Differences with regular mainnet config:
 ```yaml
 deposit_contract_address: "0x47709dC7a8c18688a1f051761fc34ac253970bC0"
@@ -18,6 +20,12 @@ GENESIS_DELAY: 86400  # 1 day
 ```
 
 [`0x47709dC7a8c18688a1f051761fc34ac253970bC0` on etherscan](https://goerli.etherscan.io/address/0x47709dc7a8c18688a1f051761fc34ac253970bc0)
+
+Misc. data:
+```yaml
+# Fork digest, mixed with zeroed genesis validators root: 
+bootnode_fork_digest: 0xb812f7ec
+```
 
 The genesis validator set is split in 8 tranches of 2048 validators.
 Contact @protolambda if you are a developer that likes to run validators.
