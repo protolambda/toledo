@@ -55,6 +55,53 @@ alethio/eth2stats-client:latest run \
 More info about eth2stats in the [eth2stats-client repo](https://github.com/Alethio/eth2stats-client/blob/master/README.md)
 
 
+## Using your testnet mnemonic
+
+For client devs:
+1. get a pre-loaded mnemonic from @protolambda to participate.
+2. Load the first 2048 accounts, output into keystores or other format
+3. Use keystores to participate!
+
+*__Not__ recommended for mainnet*, but easy to use here: https://github.com/protolambda/eth2-val-tools
+
+Example to build keystores (and random keystore secrets + config files) for a range of accounts,
+ along with an json file that tracks assignments:
+
+```shell script
+mkdir -p example_output/hosts
+
+# assign 100 random accounts to "foobar" host
+eth2-val-tools assign \
+  --assignments="example_output/assignments.json" \
+  --hostname="foobar" \
+  --out-loc="example_output/hosts/foobar" \
+  --source-mnemonic="$SOURCE_WALLET_VALIDATORS_MNEMONIC" \
+  --source-min=0 \
+  --source-max=2048 \
+  --count=100 \
+  --config-base-path="/data" \
+  --key-man-loc="/data/wallets" \
+  --wallet-name="foobar"
+
+# and assign another 100 to "pineapple" host (no overlaps, previous assignments are loaded from json file)
+eth2-val-tools assign \
+  --assignments="example_output/assignments.json" \
+  --hostname="pineapple" \
+  --out-loc="example_output/hosts/pineapple" \
+  --source-mnemonic="$SOURCE_WALLET_VALIDATORS_MNEMONIC" \
+  --source-min=0 \
+  --source-max=2048 \
+  --count=100 \
+  --config-base-path="/data" \
+  --key-man-loc="/data/wallets" \
+  --wallet-name="pineapple"
+```
+
+Or alternatively, use your own tooling.
+The accounts loaded with deposits are `[f"m/12381/3600/{i}/0/0" for i in range(2048)]`
+The latest Ethdo libraries and Herumi BLS were used to derive private keys from the mnemonic (not sure if updated to new mnemonic derivation yet).
+
+
 ## Client configuration
 
 Work in progress. Client configurations are unconfirmed.
