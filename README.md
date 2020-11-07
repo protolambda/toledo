@@ -6,6 +6,12 @@
 
 A temporary dev-net to test the first v1.0.0 client candidates.
 
+The genesis validator set is split in 8 tranches of 2048 validators.
+Contact @protolambda if you are a developer that likes to run validators.
+Client dev teams will be provided 1 tranche each.
+
+## Config
+
 Chain config file in **[`config.yaml`](./config.yaml)**
 
 Bootnodes in [`bootnodes.txt`](./bootnodes.txt)
@@ -28,9 +34,26 @@ Misc. data:
 bootnode_fork_digest: 0xb812f7ec
 ```
 
-The genesis validator set is split in 8 tranches of 2048 validators.
-Contact @protolambda if you are a developer that likes to run validators.
-Client dev teams will be provided 1 tranche each.
+## Eth2stats
+
+Eth2stats dashboard: https://toledo.eth2.wtf
+
+Example to participate:
+```
+docker run -d --restart always --network="host" \
+--name eth2stats-client \
+-v ~/.eth2stats/data:/data \
+alethio/eth2stats-client:latest run \
+--eth2stats.node-name="example node" \
+--data.folder="/data" \
+--eth2stats.addr="grpc.toledo.eth2.wtf:8080" --eth2stats.tls=false \
+--beacon.type="v1" \
+--beacon.addr="http://localhost:5052" \
+--beacon.metrics-addr="http://localhost:5054/metrics"
+```
+
+More info about eth2stats in the [eth2stats-client repo](https://github.com/Alethio/eth2stats-client/blob/master/README.md)
+
 
 ## Client configuration
 
