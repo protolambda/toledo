@@ -130,25 +130,17 @@ Run the `v1.0.0-rc.0` branch
 
 ### Lighthouse
 
-TODO: which git branch to run?
-
-Requires a directory structured as:
-```shell script
-./boot_enr.yaml   # containing all bootnodes as YAML list
-./config.yaml  # the chain config file
-./deploy_block.txt  # containing just a bare number, of the eth1 block that the contract was deployed at
-./deposit_contract.txt  # containing the deposit contract address, with quotes like a json string
-```
+Use the [`toledo`](https://github.com/sigp/lighthouse/pull/1874) branch (until that PR is merged into master).
 
 #### Beacon node
 
 ```
-  --testnet-dir="some/config_dir/path_here"
+  --testnet toledo
 ```
 
 #### Validator
 ```
-  --testnet-dir="some/config_dir/path_here"
+  --testnet toledo
 ```
 
 ### Teku
