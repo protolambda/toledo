@@ -153,7 +153,7 @@ Use the [`toledo`](https://github.com/sigp/lighthouse/pull/1874) branch (until t
 
 ### Nimbus
 
-TODO: which git branch to run?
+Run `devel` or `master` branch
 
 #### Beacon node
 
@@ -162,12 +162,12 @@ Prepare a binary with insecure/experimental features enabled:
 make -j8 LOG_LEVEL="TRACE" NIMFLAGS="-d:insecure" beacon_node
 ```
 
-Requires a special json config file.
-```
-  --network="nimbus_config.json"
-```
+Use the `toledo` network option.
 
-Config file looks like [`nimbus_config.json`](./nimbus_config.json)
+```
+  --network=toledo
+```
+]
 
 #### Validator
 
