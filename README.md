@@ -135,12 +135,12 @@ Use the [`toledo`](https://github.com/sigp/lighthouse/pull/1874) branch (until t
 #### Beacon node
 
 ```
-  --testnet toldeo
+  --testnet toledo
 ```
 
 #### Validator
 ```
-  --testnet toldeo
+  --testnet toledo
 ```
 
 ### Teku
