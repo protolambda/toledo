@@ -113,18 +113,23 @@ These are being resolved.
 
 Run the `v1.0.0-rc.0` branch
 
+Or use docker images:
+
+```yaml
+beacon_image_name: gcr.io/prysmaticlabs/prysm/beacon-chain:toledo
+validator_image_name: gcr.io/prysmaticlabs/prysm/validator:toledo
+```
+
 #### Beacon node
 
 ```
-  --chain-config-file="config.yaml"
-  --deposit-contract="0x47709dC7a8c18688a1f051761fc34ac253970bC0"
-  --contract-deployment-block="3702432"
+  --toledo
 ```
 
 #### Validator
 
 ```
-  --chain-config-file="config.yaml"
+  --toledo
 ```
 
 
