@@ -145,13 +145,10 @@ Use the [`toledo`](https://github.com/sigp/lighthouse/pull/1874) branch (until t
 
 ### Teku
 
-TODO: which git branch to run?
-
 #### Beacon node & validator
 
 ```
-  --network="config.yaml"
-  --eth1-deposit-contract-address="0x47709dC7a8c18688a1f051761fc34ac253970bC0"
+  --network=toledo
 ```
 
 ### Nimbus
