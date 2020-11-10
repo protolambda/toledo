@@ -6,6 +6,11 @@
 
 A temporary dev-net to test the first v1.0.0 client candidates.
 
+**Explorer: https://toledo.beaconcha.in/**
+
+**Eth2stats: https://toledo.eth2.wtf/**
+
+
 The genesis validator set is split in 8 tranches of 2048 validators.
 Contact @protolambda if you are a developer that likes to run validators.
 Client dev teams will be provided 1 tranche each.
