@@ -32,6 +32,14 @@ Misc. data:
 ```yaml
 # Fork digest, mixed with zeroed genesis validators root: 
 bootnode_fork_digest: 0xb812f7ec
+# curl localhost:4000/eth/v1/beacon/genesis
+# The genesis time, after waiting for a good eth1 candidate block etc.
+actual_genesis_time: 1605009608
+genesis_validators_root: 0xf97c437ca276ed2ff83f9cb2ce4387cbfda8a825c77154c7bf76c668a2218de6
+# curl localhost:4000/eth/v1/beacon/states/genesis/root
+genesis_state_root: 0x881c6014f67e4ed9fb01eaac1e115a05851c2092e62f0360e8f9deec6f08baa3
+# curl localhost:4000/eth/v1/beacon/blocks/genesis/root
+genesis_block_root: 0xa7ad6516d0f223d3e9035c6434aa5ab5496f631c42401f812e428004e14533d3
 ```
 
 ## Eth2stats
